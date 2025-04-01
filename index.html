@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Almeida Home Page | Educa&ccedil;&atilde;o profissional e &agrave;reas afins - Eletrot&eacute;cnica, Eletr&ocirc;nica, Automa&ccedil;&atilde;o...</title>
+  <link rel="stylesheet" type="text/css" href="./src/css/cssaca02.css" media="screen" />
+   	<meta name="Author" content="Antonio Almeida">
+   	<meta name="reply-to" content="tonical@cefetba.br">
+   	<meta name="author" content="Script desenvolvido por Tenko - Adaptado por Antonio Almeida">
+   	<meta name="description" content="TV Player">
+   	<meta name="keywords" content="html, xhtml, css, w3c">
+   	<meta name="revisit" content="1 day">
+   	<meta http-equiv="pragma" content="no-cache">
+   	<meta name="robot" content="index, follow">
+<!-- Script jQuery -->
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="../src/script/jquery-latest.min.js"></script>
+<script src="../src/script/jquery-latest.js"></script>
+<!-- end Script jQuery -->
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: #555;
+  color: white;
+  border-radius: 10px;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+.topnav #myLinks {
+  display: none;
+}
+.topnav a {
+  padding: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+.topnav a.icon {
+  background-color: #000;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.active {
+  background-color: #333;
+  color: white;
+}
+.logo {
+  background-color: #000;
+  padding: 12px;
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+}
+
+</style>
+</head>
+<!-- Site -->
+<body>
+<div class="principal">
+<!-- quadTopo -->
+<div class="quadTopo" align="center">
+<em><h1>almhp.com</h1></em>
+</div>
+<!-- menuTop -->
+<div class="menuTopo">
+<!-- Simulate a smartphone / tablet -->
+<!-- Top Navigation Menu -->
+<div class="topnav">
+ <div align="center"class="logo">Almeida Home Page</div>
+</div>
+<!-- End smartphone / tablet look -->
+</div>
+<!-- quadTitulo -->
+<div class="quadTitulo" align="center">
+     <p><em><h2>Chat em tempo Real</h2></em></p>
+</div>
+<!-- Coluna Esquerda -->
+<!-- Palco -->	
+<div class="quadCorpo" align="left">
+<main>
+<section>
+<h3>Criando uma aplicação de Chat em Tempo Real com JavaScript e Socket.io</h3>
+ <p>Neste tutorial, vamos criar uma aplicação de chat em tempo real utilizando o JavaScript e Socket.io.<br> O tutorial inclui exemplos de código e sugestões de funcionalidades adicionais, sendo indicado para desenvolvedores intermediários.</p>
+ <p>O Socket.io e uma biblioteca JavaScript que facilita a comunicação bidirecional entre cliente e servidor, utilizando WebSockets. Com ela, podemos desenvolver aplicações de chat de forma eficiente e simples.</p>
+ <p>Para a prática deste projeto, utilizaremos o sistema operacional Linux, especificamente a distribuição Ubuntu 20.04. Organizaremos a implementação em etapas para facilitar o entendimento e a execução.</p>
+</section>
+<hr>
+<section>
+<h3>Etapa 1 – Configurando um Servidor Node.js com Socket.io</h3>
+<p>Primeiramente, abra o terminal pressionando Ctrl + Alt + T, certifique-se de que você tem o Node.js e o npm instalados em seu sistema, depois siga os passos abaixo.</p>
+<p>1. Crie uma pasta para o projeto:</p>
+<pre class="but02">
+nkdir almchat
+</pre>
+<p>2. Entre na pasta e inicialize o projeto Node.js:</p>
+<pre class="but02">
+cd almchat
+npm init -y
+</pre>
+<p>3. Instale as dependências necessárias:</p>
+<pre class="but02">
+npm install express socket.io
+</pre>
+<p>4. Crie o arquivo do servidor:</p>
+<pre class="but02">
+touch server.js
+</pre>
+<p>5. Abra seu editor de código preferido, para o arquivo server.js:</p>
+<pre class="but02">
+sudo mousepad server.js
+</pre>
+<p>6. No arquivo <strong>server.js</strong> adicione o seguinte código:</p>
+<section>
+<p><em><h2>server.js</h2></em></p>
+<p><pre><img src="./src/image/01server.png"></pre></p>
+<p>Salve e feche o arquivo.</p>
+</section>
+<hr>
+<section>
+<h3>Etapa 2 – Criando a Interface do Chat</h3>
+ <p>Agora, precisamos criar uma página HTML para a interface do chat. Siga os passos abaixo:</p>
+<p>1. Crie um arquivo index.html:</p>
+<pre class="but02">
+touch index.html
+</pre>
+<p>2. Abra seu editor de código preferido para o arquivo index.html:</p>
+<pre class="but02">
+sudo mousepad index.html
+</pre>
+<p>3. No arquivo <strong>index.html</strong> adicione o seguinte código:</p>
+<section>
+<p><em><h2>index.html</h2></em></p>
+<p><pre><img src="./src/image/02interface.png"></pre></p>
+<p>Salve e feche o arquivo.</p>
+</section>
+
+<p>Este arquivo HTML inclui um formulário para o envio de mensagens e uma área para exibição das mensagens recebidas, eliminando a necessidade de um arquivo JavaScript separado para o cliente.</p>
+<p>A conexão com o servidor via Socket.io é realizada diretamente aqui, permitindo capturar os valores inseridos pelo usuário e enviar as mensagens ao servidor de forma integrada.</p>
+
+</section>
+<hr>
+<section>
+<h3>Testando a aplicação</h3>
+<p>1. Entre na pasta do projeto e inicie o servidor:</p>
+<pre class="but02">
+cd almchat
+node server.js
+</pre>
+<p>2. Abra o navegador e acesse:</p>
+<pre class="but03">
+http://localhost:3000
+</pre>
+<p>3. Abra duas abas no navegador para testar a troca de mensagens em tempo real.</p>
+<section>
+<p><em><h3>Veja o nosso Chat funcionando!</h3></em></p>
+<p><pre><img src="./src/image/03chat.png"></pre></p>
+<p>Salve e feche o arquivo.</p>
+</section>
+<hr>
+<section>
+<h3>Conclusão</h3>
+ <p>Criamos uma aplicação de chat em tempo real utilizando JavaScript, Node.js e Socket.io.</p>
+ <p>Essa estrutura pode ser expandida para incluir novas funcionalidades, como armazenamento de mensagens, suporte a emojis e autenticação de usuários.</p>
+ <p>Essa prática foi adaptada para usuários Linux e pode ser facilmente implementada em outros ambientes.</p>
+</section>
+
+<address><span class="but01">
+Prática adaptada para usuários Linux</strong><br/>
+por Antonio Almeida<br/>
+e-mail tonical2k11@gmail.com<br/>
+</address>
+
+<section>
+<h3>Referência</h3>
+<p><a href="https://blogjavascript.com.br/post/criando-uma-aplicacao-de-chat-em-tempo-real-com-javascript" style="text-decoration:none" target="_blank">Blog JavaScript</a></p>
+<p><a href="http://www.almhp.com/alm-downloads/artigo-chat.pdf" style="text-decoration:none" target="_self"><strong>"Se você gostou deste artigo, confira o tutorial completo em PDF clicando aqui."</strong></a></p>
+</section>
+</div>
+<!-- endPalco -->
+<!-- Rodapé -->
+<div class="band-dois" align="center">
+  <p><a href="http://html-color-codes.info" style="text-decoration:none" title="HTML color codes">HTML color codes</a></p>
+</div>
+<div class="band-um" align="left">
+   <p><a href="http://www.almhp.com" style="text-decoration:none" target="_self"><span class="zbvoltar">Voltar</span></a></p>
+</div>
+<div  class="quadBase" align="center">
+<nav class="menu">
+  <ul>
+     <li><a href="http://www.almhp.com/" style="text-decoration:none" target="_self">© Copyright 2018 - almhp.com</a></li>
+  </ul>
+ </nav><!-- end Menu -->
+</div><!-- end quadBase -->
+</div><!-- end Principal-->
+</center>
+</body>
+</html>
